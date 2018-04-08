@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new RecyclerAdapter(cardItems);
+        mAdapter = new RecyclerAdapter(cardItems, this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                                         "url: " + list.get(i).getJSONObject("owner").getString("html_url") + "\n" +
                                         "stars: " + list.get(i).getString("stargazers_count")+ "\n\n");*/
 
-                                cardItems.add(new CardItem(R.drawable.ic_android, list.get(i).getString("name"),
+                                cardItems.add(new CardItem(list.get(i).getJSONObject("owner").getString("avatar_url"), list.get(i).getString("name"),
                                         list.get(i).getJSONObject("owner").getString("html_url"),
                                         "stars: " + list.get(i).getString("stargazers_count")));
                             }

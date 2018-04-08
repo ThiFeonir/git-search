@@ -1,16 +1,16 @@
 package com.example.thiago.gitsearch;
 
 public class CardItem {
-    private int mImageResource;
+    private String mImageResource;
     private String mText1;
     private String mText2;
     private String mText3;
 
-    public int getImageResource() {
+    public String getImageResource() {
         return mImageResource;
     }
 
-    public void setImageResource(int mImageResource) {
+    public void setImageResource(String mImageResource) {
         this.mImageResource = mImageResource;
     }
 
@@ -33,7 +33,7 @@ public class CardItem {
         this.mText2 = mText2;
     }
 
-    public CardItem(int mImageResource, String mText1, String mText2, String mText3) {
+    public CardItem(String mImageResource, String mText1, String mText2, String mText3) {
         this.mImageResource = mImageResource;
         this.mText1 = mText1;
         this.mText2 = mText2;

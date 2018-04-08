@@ -1,5 +1,6 @@
 package com.example.thiago.gitsearch;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,11 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.security.CryptoPrimitive;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.AdapterViewHolder> {
     private ArrayList<CardItem> mCardlist;
+    private Context context;
 
     public static class AdapterViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
@@ -29,8 +33,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Adapte
         }
     }
 
-    public RecyclerAdapter(ArrayList<CardItem> cardlist){
+    public RecyclerAdapter(ArrayList<CardItem> cardlist, Context context){
         mCardlist = cardlist;
+        this.context = context;
     }
 
     @NonNull
@@ -46,7 +51,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Adapte
     public void onBindViewHolder(@NonNull AdapterViewHolder holder, int position) {
         CardItem currentCard = mCardlist.get(position);
 
-        holder.mImageView.setImageResource(currentCard.getImageResource());
+        Picasso.with(this.context).load(currentCard.getImageResource()).into(holder.mImageView);
         holder.mTextView.setText(currentCard.getText1());
         holder.mTextView2.setText(currentCard.getText2());
         holder.mTextView3.setText(currentCard.getText3());
