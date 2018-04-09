@@ -56,16 +56,12 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++)
                                 list.add(jsonArray.getJSONObject(i));
 
-                            for (int i = 0; i < list.size(); i++) {
-
-                               /* mTextView.append("Name: " + list.get(i).getString("name") + "\n"+
-                                        "url: " + list.get(i).getJSONObject("owner").getString("html_url") + "\n" +
-                                        "stars: " + list.get(i).getString("stargazers_count")+ "\n\n");*/
-
-                                cardItems.add(new CardItem(list.get(i).getJSONObject("owner").getString("avatar_url"), list.get(i).getString("name"),
+                            for (int i = 0; i < list.size(); i++)
+                                cardItems.add(new CardItem(
+                                        list.get(i).getJSONObject("owner").getString("avatar_url"),
+                                        list.get(i).getString("name"),
                                         list.get(i).getJSONObject("owner").getString("html_url"),
                                         "stars: " + list.get(i).getString("stargazers_count")));
-                            }
 
                             mAdapter.notifyDataSetChanged();
 
