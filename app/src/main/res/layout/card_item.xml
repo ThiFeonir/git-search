@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="107dp"
         android:layout_margin="4dp"
-        android:background="@color/cardview_shadow_start_color">
+        android:background="@color/cardview_light_background">
 
         <ImageView
             android:id="@+id/image_view"
