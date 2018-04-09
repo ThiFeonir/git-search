@@ -7,3 +7,7 @@ I made this app just to practice some android stuff.
 - Picasso;
 - Material Design;
 - Rest;
+
+# Layout
+
+![alt text](https://raw.github.com/ThiFeonir/git-search/blob/master/LayoutExamples.png)
