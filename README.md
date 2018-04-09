@@ -1,4 +1,4 @@
-# git-search
+# Git Search
 # An app to search for repos in git.
 A simple app that searches the repositories with the highest number of stars.
 I made this app just to practice some android stuff.
