@@ -1,11 +1,9 @@
-package com.example.thiago.gitsearch;
+package com.example.thiago.gitsearch.Interfaces;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -13,6 +11,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.thiago.gitsearch.Domain.CardItem;
+import com.example.thiago.gitsearch.R;
+import com.example.thiago.gitsearch.Adapters.RecyclerAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<CardItem> cardItems = new ArrayList<>();
+
+    private final String GIT_URL = "https://api.github.com/search/repositories?q=stars:%3E1&order=desc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="https://api.github.com/search/repositories?q=stars:%3E1&order=desc";
 
-        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, GIT_URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //mTextView.setText("That didn't work!");
+
             }
         });
 

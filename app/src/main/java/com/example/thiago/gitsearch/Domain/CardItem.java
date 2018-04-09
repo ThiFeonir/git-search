@@ -1,4 +1,4 @@
-package com.example.thiago.gitsearch;
+package com.example.thiago.gitsearch.Domain;
 
 public class CardItem {
     private String mImageResource;
@@ -10,16 +10,8 @@ public class CardItem {
         return mImageResource;
     }
 
-    public void setImageResource(String mImageResource) {
-        this.mImageResource = mImageResource;
-    }
-
     public String getText1() {
         return mText1;
-    }
-
-    public void setText1(String mText1) {
-        this.mText1 = mText1;
     }
 
     public String getText2() {

@@ -1,4 +1,4 @@
-package com.example.thiago.gitsearch;
+package com.example.thiago.gitsearch.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,9 +9,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.thiago.gitsearch.Domain.CardItem;
+import com.example.thiago.gitsearch.R;
 import com.squareup.picasso.Picasso;
 
-import java.security.CryptoPrimitive;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.AdapterViewHolder> {
