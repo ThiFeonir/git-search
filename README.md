@@ -10,4 +10,4 @@ I made this app just to practice some android stuff.
 
 # Layout
 
-![alt tag](https://github.com/ThiFeonir/git-search/blob/master/LayoutExample.png)
+![Optional Text](../master/image.png)
